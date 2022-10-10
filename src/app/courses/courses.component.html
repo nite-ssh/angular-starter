@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="course-list card">
+    <div class="card-body">
+      <h5 class="card-title">List Of Courses</h5>
+      <ul class="list-group">
+        <li
+          class="list-group-item list-group-item-action"
+          *ngFor="let course of courses"
+          (click)="selectedCourseHandler(course)"
+          [ngStyle]=""
+        >
+          <p>
+            {{ course.title }}
+          </p>
+          <p>{{ course.description }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="selected-course card">
+    <div class="card-body">
+      <h5 class="card-title">Selected Course</h5>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-action">
+          {{ selectedCourse | json }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
